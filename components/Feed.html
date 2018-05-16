@@ -1,0 +1,46 @@
+<li>
+    <h3>{feed.feedTitle}</h3>
+    <ul class="items">
+        {#each feed.item as item}
+        <FeedItem bind:item />
+        {/each}
+    </ul>
+</li>
+
+
+<style>
+    li {
+        clear: both;
+        margin-bottom: 30px;
+    }
+    ul {
+        margin: 0;
+        padding:0;
+        list-style-type: none;
+    }
+    h3 {
+        font-weight: normal;
+        font-size: 12px;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        text-align: center;
+        position: relative;
+        margin-top: 10px;
+    }
+    h3:before {
+        content: '';
+        position: absolute;
+        border-bottom: 1px solid #888;
+        top: -8px;
+        left: 40%;
+        right: 40%;
+    }
+</style>
+
+<script>
+    import FeedItem from './FeedItem.html';
+
+    export default {
+        components: {FeedItem}
+    };
+</script>

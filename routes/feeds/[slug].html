@@ -1,0 +1,36 @@
+<svelte:head>
+    <title>{data.metadata.name}</title>
+</svelte:head>
+
+<ul class="feeds">
+    {#each data.updatedFeeds.updatedFeed as feed}
+    <Feed bind:feed />
+    {/each}
+</ul>
+
+<style>
+    ul {
+        margin: 0;
+        padding:10px;
+        list-style-type: none;
+    }
+</style>
+
+<script>
+    import Feed from '../../components/Feed.html';
+
+    export default {
+        components: {Feed},
+        preload({ params, query }) {
+            // the `slug` parameter is available because this file
+            // is called [slug].html
+            const { slug } = params;
+
+            return this.fetch(`feeds/${slug}.json`)
+            .then(r => r.json())
+            .then(data => {
+                return { data };
+            });
+        }
+    };
+</script>

@@ -1,0 +1,44 @@
+<li>
+    <h4><a href="{item.link}">{item.title}</a></h4>
+    <div class="date">({pubDate})</div>
+    <p>{@html item.body || '---'}</p>
+</li>
+
+<style>
+    h4 { font-weight: bold; }
+    a { text-decoration: none;
+        color: #ffe0b1;}
+    a:hover { text-decoration: underline; }
+    li {
+        list-style-type: none;
+        margin: 0;
+        margin-bottom: 10px;
+        border-radius: 5px;
+        clear: both;
+    }
+    p {
+        font-size: 13px;
+        color: #bbb;
+        margin-top: 0px;
+    }
+    .date {
+        font-size: 12px;
+        color: #aaa;
+        padding-left: 10px;
+        font-style: italic;
+        float: right;
+        position: relative;
+    }
+</style>
+
+<script>
+    import moment from 'moment';
+
+    export default {
+        computed: {
+            pubDate ({item}) {
+                return moment(item.pubDate).fromNow();
+            }
+        }
+    }
+</script>
