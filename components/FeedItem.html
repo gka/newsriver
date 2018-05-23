@@ -1,5 +1,5 @@
 <li>
-    <h4><a target="_blank" href="{item.link}">{item.title}</a></h4>
+    <h4><a target="_blank" href="{url}">{item.title}</a></h4>
     <div class="date">({pubDate})</div>
     <p>{@html item.body || '---'}</p>
 </li>
@@ -37,11 +37,20 @@
 
 <script>
     import moment from 'moment';
+    import URL from 'url-parse';
 
     export default {
         computed: {
             pubDate ({item}) {
                 return moment(item.pubDate).fromNow();
+            },
+            url ({item}) {
+                if (item.link.substr(0,27) == 'http://news.google.com/news') {
+                    const url = new URL(item.link, true);
+                    console.log(url);
+                    return url.query.url;
+                }
+                return item.link;
             }
         }
     }

@@ -26,7 +26,7 @@ module.exports = {
     },
     devServer: {
         watchOptions: {
-            ignored: "river/**/*.js"
+            ignored: ['data/*']
         }
     },
     mode: process.env.NODE_ENV,
