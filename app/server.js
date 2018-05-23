@@ -24,3 +24,7 @@ const riverCfg = JSON.parse(fs.readFileSync('river/config.json'));
 reader.init (riverCfg, function () {
     console.log('river initialized');
 });
+
+// import parseFeeds from './reader/parse-feeds';
+
+

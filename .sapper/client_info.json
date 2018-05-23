@@ -1,0 +1,13 @@
+{
+  "assets": {
+    "_": "a43a9703879931282ae8/_._.js",
+    "_4xx": "a43a9703879931282ae8/_4xx._4xx.js",
+    "_5xx": "a43a9703879931282ae8/_5xx._5xx.js",
+    "feeds_$slug$": [
+      "a43a9703879931282ae8/feeds_$slug$.feeds_$slug$.js",
+      "feeds_$slug$.decf8c257b804e1d1c94.hot-update.js"
+    ],
+    "main": "a43a9703879931282ae8/main.js",
+    "vendors~feeds_$slug$": "a43a9703879931282ae8/vendors~feeds_$slug$.vendors~feeds_$slug$.js"
+  }
+}
